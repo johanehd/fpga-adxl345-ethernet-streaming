@@ -1,0 +1,13 @@
+*.log
+*.jou
+*.str
+.Xil/
+*.os/
+/eth_adxl_project.runs/
+/eth_adxl_project.gen/
+/eth_adxl_project.hw/
+/eth_adxl_project.ip_user_files/
+/eth_adxl_project.sim/
+/eth_adxl_project.cache/
+__pycache__/
+*.pyc
