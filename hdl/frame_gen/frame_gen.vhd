@@ -110,8 +110,8 @@ begin
                     out_valid <= '1';
 
                     if handshake = '1' then
-                        -- end of frame at byte 47 (payload included)
-                        if byte_idx = 47 then
+                        -- end of frame at byte 59 (payload & padding included)
+                        if byte_idx = 59 then
                             running   <= '0';
                             out_valid <= '0';
                             out_last  <= '0';
@@ -185,12 +185,12 @@ begin
                                 when 45 => out_data <= ay_reg(7 downto 0);  
                                 when 46 => out_data <= az_reg(15 downto 8); 
                                 when 47 => out_data <= az_reg(7 downto 0);  
-
+                                when 48 to 59 => out_data <= x"00"; -- padding to satisfy IEEE 802.3 minimum frame length
                                 when others => out_data <= x"00";
                             end case;
 
                             -- tlast asserted on byte 47
-                            if (byte_idx + 1) = 47 then
+                            if (byte_idx + 1) = 59 then
                                 out_last <= '1';
                             else
                                 out_last <= '0';
