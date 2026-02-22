@@ -57,11 +57,11 @@ This repository uses a `.tcl` script to rebuild the project structure automatica
 2.  **Open the Tcl Console** (Window > Tcl Console).
 3.  **Navigate to the project folder**:
     ```tcl
-    cd [path/to/eth_adxl_project]
+    cd [path/to/ether_adxl_project]
     ```
 4.  **Source the restoration script**:
     ```tcl
-    source  eth_adxl_project.tcl
+    source  ether_adxl_project.tcl
     ```
 5.  **Configure Networking**: Open `top_eth.vhd` and update the `mac_dest` and `ip_dest` generics to match your PC.
 6.  **Generate Bitstream**: Click "Generate Bitstream" to run Synthesis, Implementation, and Bitstream generation.
